@@ -1,0 +1,12 @@
+body {
+  background-color: #fafafa;
+  min-height: 400vh;
+}
+
+nav {
+  border-bottom: 1px solid rgb(219, 219, 219);
+}
+
+nav .navbar-brand img {
+  width: 100px;
+}
