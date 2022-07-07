@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Logo from '../assets/img/logo.png';
+import Logo from '../assets/img/loading-icon.png';
 import MetaLogo from '../assets/img/Instagram-Meta.png';
 
 class Loading extends Component {

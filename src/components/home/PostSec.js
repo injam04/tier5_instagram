@@ -29,7 +29,7 @@ const SinglePost = (props) => (
           alt=''
           className={props.story ? 'active' : ''}
         />
-        <p>bhattacharya.sweta21</p>
+        <p className='fw-600'>bhattacharya.sweta21</p>
       </div>
       <div className='action pointer'>
         <svg
