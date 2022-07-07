@@ -41,6 +41,36 @@ nav .container {
 }
 
 /*============================================================================*/
+/*================================== Loading =================================*/
+/*============================================================================*/
+.main-loading {
+  background-color: #fff;
+  height: 100vh;
+  width: 100vw;
+  position: relative;
+  overflow: hidden;
+}
+
+.main-loading img.main-logo {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 55px;
+}
+
+.main-loading .bottom {
+  position: absolute;
+  left: 50%;
+  bottom: 5px;
+  transform: translate(-50%, 0);
+}
+
+.main-loading .bottom img {
+  width: 100px;
+}
+
+/*============================================================================*/
 /*================================== Navbar ==================================*/
 /*============================================================================*/
 
