@@ -1,22 +1,12 @@
 import React, { Component } from 'react';
+import StorySlider from './StorySlider';
 
 class PostSec extends Component {
   render() {
     return (
       <>
         <div className='stories'>
-          <div className='single'>
-            <img src='https://via.placeholder.com/600/65c952' alt='' />
-            <p className='name'>sk.ni..</p>
-          </div>
-          <div className='single'>
-            <img src='https://via.placeholder.com/600/56h786' alt='' />
-            <p className='name'>sarjok..</p>
-          </div>
-          <div className='single'>
-            <img src='https://via.placeholder.com/600/07g634' alt='' />
-            <p className='name'>_s_i_a..</p>
-          </div>
+          <StorySlider />
         </div>
         <div className='posts'>
           <SinglePost story={true} />

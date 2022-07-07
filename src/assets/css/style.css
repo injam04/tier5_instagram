@@ -1,6 +1,5 @@
 body {
   background-color: #fafafa;
-  min-height: 400vh;
   color: #262626;
 }
 
@@ -34,7 +33,7 @@ nav .container {
 }
 
 .fw-600 {
-  font-weight: 600;
+  font-weight: 500;
 }
 
 .ins-primary {
@@ -112,7 +111,8 @@ nav .main-nav .right-section .icons img {
   background-color: #fff;
   border: 1px solid rgb(219, 219, 219);
   border-radius: 8px;
-  padding: 16px;
+  /* padding: 16px 0 16px 16px; */
+  padding: 16px 0;
   margin-bottom: 15px;
 }
 
@@ -153,6 +153,29 @@ nav .main-nav .right-section .icons img {
   color: #262626;
   text-align: center;
   margin-top: 5px;
+}
+
+.swiper-button-next,
+.swiper-button-prev {
+  background-color: #fff;
+  color: #0b0c14;
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+}
+
+.swiper-button-next:after,
+.swiper-button-prev:after {
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.swiper-slide:first-child {
+  margin-left: 15px;
+}
+
+.swiper-slide:last-child {
+  margin-right: 15px;
 }
 
 .homepage .main-sec .posts .single {
@@ -368,4 +391,9 @@ nav .main-nav .right-section .icons img {
 
 .homepage .profile-sec .company-info p {
   color: #c7c7c7;
+}
+
+.swiper-button-next.swiper-button-disabled,
+.swiper-button-prev.swiper-button-disabled {
+  display: none;
 }
