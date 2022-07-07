@@ -5,12 +5,12 @@ import UserImg from '../assets/img/pp.jpeg';
 class Navbar extends Component {
   render() {
     return (
-      <nav class='navbar fixed-top navbar-light bg-white'>
-        <div class='container'>
+      <nav className='navbar fixed-top navbar-light bg-white'>
+        <div className='container'>
           <div className='row w-100'>
             <div className='col-12'>
               <div className='main-nav'>
-                <a class='navbar-brand' href='#?'>
+                <a className='navbar-brand' href='#?'>
                   <img src={MainLogo} alt='' className='img-fluid' />
                 </a>
                 <div className='right-section'>
