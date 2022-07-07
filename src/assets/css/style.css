@@ -1,11 +1,25 @@
 body {
   background-color: #fafafa;
   min-height: 400vh;
+  color: #262626;
 }
 
 .container {
   max-width: calc(935px + 40px);
 }
+
+.pointer {
+  cursor: pointer;
+}
+
+.line-brk {
+  padding: 1px;
+  border-top: 1px solid rgb(239, 239, 239);
+}
+
+/*============================================================================*/
+/*================================== Navbar ==================================*/
+/*============================================================================*/
 
 nav {
   border-bottom: 1px solid rgb(219, 219, 219);
@@ -59,4 +73,184 @@ nav .main-nav .right-section .icons img {
   border-radius: 50%;
   margin-left: 22px;
   cursor: pointer;
+}
+
+/*============================================================================*/
+/*================================= Homepage =================================*/
+/*============================================================================*/
+.homepage {
+  padding: 85px 0;
+}
+
+.homepage .main-sec .stories {
+  display: flex;
+  align-items: center;
+  background-color: #fff;
+  border: 1px solid rgb(219, 219, 219);
+  border-radius: 8px;
+  padding: 16px;
+  margin-bottom: 15px;
+}
+
+.homepage .main-sec .stories .single:not(:last-child) {
+  margin-right: 15px;
+}
+
+.homepage .main-sec .stories .single {
+  cursor: pointer;
+}
+
+.homepage .main-sec .stories .single img {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  border: 2px solid transparent;
+  padding: 2px;
+
+  background: linear-gradient(to right, #fff, #fff),
+    linear-gradient(
+      to left bottom,
+      #833ab4 0%,
+      #c13584 15%,
+      #e1306c 30%,
+      #fd1d1d 45%,
+      #f56040 60%,
+      #f77737 75%,
+      #fcaf45 85%,
+      #ffdc80 100%
+    );
+  background-clip: padding-box, border-box;
+  background-origin: padding-box, border-box;
+}
+
+.homepage .main-sec .stories .single p {
+  margin: 0;
+  font-size: 12px;
+  color: #262626;
+  text-align: center;
+  margin-top: 5px;
+}
+
+.homepage .main-sec .posts .single {
+  background-color: #fff;
+  border: 1px solid rgb(219, 219, 219);
+  border-radius: 8px;
+}
+
+.homepage .main-sec .posts .single .header,
+.homepage .main-sec .posts .single .footer,
+.homepage .main-sec .posts .single .input-comment {
+  padding: 10px;
+}
+
+.homepage .main-sec .posts .single:not(:last-child) {
+  margin-bottom: 12px;
+}
+
+.homepage .main-sec .posts .single .main-image img {
+  width: 100%;
+}
+
+.homepage .main-sec .posts .single .header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.homepage .main-sec .posts .single .header .user {
+  display: flex;
+  align-items: center;
+}
+
+.homepage .main-sec .posts .single .header .user img {
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+}
+
+.homepage .main-sec .posts .single .header .user img.active {
+  border: 2px solid transparent;
+  padding: 2px;
+
+  background: linear-gradient(to right, #fff, #fff),
+    linear-gradient(
+      to left bottom,
+      #833ab4 0%,
+      #c13584 15%,
+      #e1306c 30%,
+      #fd1d1d 45%,
+      #f56040 60%,
+      #f77737 75%,
+      #fcaf45 85%,
+      #ffdc80 100%
+    );
+  background-clip: padding-box, border-box;
+  background-origin: padding-box, border-box;
+}
+
+.homepage .main-sec .posts .single .header .user p {
+  margin: 0;
+  font-size: 14px;
+  margin-left: 5px;
+}
+
+.homepage .main-sec .posts .single .footer .actions {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.homepage .main-sec .posts .single .footer .actions svg {
+  fill: #262626;
+  cursor: pointer;
+}
+
+.homepage .main-sec .posts .single .footer .actions svg:hover {
+  fill: #8e8e8e !important;
+}
+
+.homepage .main-sec .posts .single .footer .actions svg.chat {
+  margin: 0 10px;
+}
+
+.homepage .main-sec .posts .single .input-comment {
+  display: flex;
+  align-items: center;
+}
+
+.homepage .main-sec .posts .single .input-comment .main-inp {
+  flex: 1;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.homepage .main-sec .posts .single .input-comment .main-inp input {
+  border: none;
+  outline: none;
+  /* background-color: red; */
+  width: 100%;
+  margin-left: 10px;
+  margin-right: 10px;
+  color: rgb(38, 38, 38);
+  font-size: 14px;
+}
+
+.homepage .main-sec .posts .single .input-comment .main-inp input::placeholder {
+  color: rgb(142, 142, 142);
+}
+
+.homepage .main-sec .posts .single .input-comment .main-inp button {
+  border: none;
+  outline: none;
+  padding: 0;
+  color: rgb(0, 149, 246);
+  background: transparent;
+  font-size: 14px;
+  font-weight: 700;
+  opacity: 0.5;
+}
+
+.homepage .main-sec .posts .single .input-comment .main-inp button:hover {
+  opacity: 1;
 }
