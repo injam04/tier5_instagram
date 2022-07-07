@@ -3,10 +3,60 @@ body {
   min-height: 400vh;
 }
 
+.container {
+  max-width: calc(935px + 40px);
+}
+
 nav {
   border-bottom: 1px solid rgb(219, 219, 219);
 }
 
 nav .navbar-brand img {
   width: 100px;
+}
+
+nav .main-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+nav .main-nav .right-section {
+  display: flex;
+  align-items: center;
+}
+
+nav .main-nav .right-section .search {
+  padding-right: 80px;
+}
+
+nav .main-nav .right-section .search input {
+  background: transparent
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' class='icon icon-tabler icon-tabler-search' width='20' height='20' viewBox='0 0 24 24' stroke-width='2' stroke='%238e8e8e' fill='none' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath stroke='none' d='M0 0h24v24H0z' fill='none'/%3E%3Ccircle cx='10' cy='10' r='7' /%3E%3Cline x1='21' y1='21' x2='15' y2='15' /%3E%3C/svg%3E")
+    no-repeat 17px center;
+
+  border: none;
+  outline: none;
+  background-color: #efefef;
+  border-radius: 8px;
+  padding: 6px 4px 7px 45px;
+  width: 260px;
+  color: #8e8e8e;
+}
+
+nav .main-nav .right-section .search input::placeholder {
+  color: #8e8e8e;
+}
+
+nav .main-nav .right-section .icons svg {
+  margin-left: 22px;
+  cursor: pointer;
+}
+
+nav .main-nav .right-section .icons img {
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  margin-left: 22px;
+  cursor: pointer;
 }
