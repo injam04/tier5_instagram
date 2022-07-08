@@ -286,9 +286,14 @@ nav .main-nav .right-section .icons img {
   cursor: pointer;
 }
 
-.homepage .main-sec .posts .single .footer .actions svg:hover {
-  fill: #8e8e8e !important;
+.homepage .main-sec .posts .single .footer .actions svg.unlike {
+  fill: #ed4956;
+  cursor: pointer;
 }
+
+/* .homepage .main-sec .posts .single .footer .actions svg:hover {
+  fill: #8e8e8e !important;
+} */
 
 .homepage .main-sec .posts .single .footer .actions svg.chat {
   margin: 0 10px;
@@ -306,6 +311,21 @@ nav .main-nav .right-section .icons img {
 
 .homepage .main-sec .posts .single .footer .liked {
   margin: 10px 0 4px;
+}
+
+.homepage .main-sec .posts .single .footer .caption {
+  display: flex;
+  align-items: flex-start;
+}
+
+.homepage .main-sec .posts .single .footer .caption .name {
+  margin-right: 5px;
+}
+
+.homepage .main-sec .posts .single .footer .caption .caption-txt {
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
 }
 
 .homepage

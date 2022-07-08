@@ -12,8 +12,8 @@ class StorySlider extends Component {
       <Swiper
         spaceBetween={10}
         slidesPerView={7}
-        onSlideChange={() => console.log('slide change')}
-        onSwiper={(swiper) => console.log(swiper)}
+        // onSlideChange={() => console.log('slide change')}
+        // onSwiper={(swiper) => console.log(swiper)}
         navigation
         modules={[Navigation]}
         slidesPerGroup={4}
