@@ -1,17 +1,29 @@
 import React, { Component } from 'react';
 import StorySlider from './StorySlider';
+import { Stories } from '../../helpers/Stories';
 
 class PostSec extends Component {
+  state = {
+    allPosts: null,
+  };
+
+  componentDidMount() {
+    this.setState({ allPosts: Stories });
+  }
+
   render() {
+    const { allPosts } = this.state;
+
     return (
       <>
         <div className='stories'>
           <StorySlider />
         </div>
         <div className='posts'>
-          <SinglePost story={true} />
-          <SinglePost story={false} />
-          <SinglePost story={true} />
+          {allPosts &&
+            allPosts.map((post, i) => (
+              <SinglePost story={i % 2 ? true : false} key={i} post={post} />
+            ))}
         </div>
       </>
     );
@@ -118,25 +130,40 @@ const SinglePost = (props) => (
           </svg>
         </div>
         <div className='right'>
-          <svg
-            aria-label='Save'
-            className='_ab6-'
-            color=''
-            fill=''
-            height={24}
-            role='img'
-            viewBox='0 0 24 24'
-            width={24}
-          >
-            <polygon
-              fill='none'
-              points='20 21 12 13.44 4 21 4 3 20 3 20 21'
-              stroke='currentColor'
-              strokeLinecap='round'
-              strokeLinejoin='round'
-              strokeWidth={2}
-            />
-          </svg>
+          {props.post.user_has_saved ? (
+            <svg
+              aria-label='Remove'
+              className='_ab6-'
+              color='#262626'
+              fill='#262626'
+              height={24}
+              role='img'
+              viewBox='0 0 24 24'
+              width={24}
+            >
+              <path d='M20 22a.999.999 0 01-.687-.273L12 14.815l-7.313 6.912A1 1 0 013 21V3a1 1 0 011-1h16a1 1 0 011 1v18a1 1 0 01-1 1z' />
+            </svg>
+          ) : (
+            <svg
+              aria-label='Save'
+              className='_ab6-'
+              color=''
+              fill=''
+              height={24}
+              role='img'
+              viewBox='0 0 24 24'
+              width={24}
+            >
+              <polygon
+                fill='none'
+                points='20 21 12 13.44 4 21 4 3 20 3 20 21'
+                stroke='currentColor'
+                strokeLinecap='round'
+                strokeLinejoin='round'
+                strokeWidth={2}
+              />
+            </svg>
+          )}
         </div>
       </div>
     </div>

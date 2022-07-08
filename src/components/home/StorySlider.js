@@ -16,6 +16,7 @@ class StorySlider extends Component {
         onSwiper={(swiper) => console.log(swiper)}
         navigation
         modules={[Navigation]}
+        slidesPerGroup={4}
       >
         <SwiperSlide>
           <SingleStory img_id='65c952' name='sk.ni..' />
