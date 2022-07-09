@@ -11,6 +11,39 @@ class PostSec extends Component {
     this.setState({ allPosts: Stories });
   }
 
+  actionLikeSave = (post, type, action) => {
+    // console.log(post);
+    // console.log(type);
+    // console.log(action);
+
+    if (type === 'save') {
+      const newAllPosts = this.state.allPosts.map((p) => {
+        if (p.id === post.id) {
+          p.user_has_saved = action;
+        }
+        return p;
+      });
+      this.setState({ allPosts: newAllPosts });
+    } else if (type === 'like') {
+      const newAllPosts = this.state.allPosts.map((p) => {
+        if (p.id === post.id) {
+          p.user_has_liked = action;
+        }
+        return p;
+      });
+      this.setState({ allPosts: newAllPosts });
+    }
+  };
+
+  actionDblClick = (post, type, action) => {
+    this.actionLikeSave(post, type, action);
+    const mainSvg = document.querySelector('.effect-svg');
+    mainSvg.classList.add('active');
+    setTimeout(() => {
+      mainSvg.classList.remove('active');
+    }, 2000);
+  };
+
   render() {
     const { allPosts } = this.state;
 
@@ -22,7 +55,13 @@ class PostSec extends Component {
         <div className='posts'>
           {allPosts &&
             allPosts.map((post, i) => (
-              <SinglePost story={i % 2 ? false : true} key={i} post={post} />
+              <SinglePost
+                story={i % 2 ? false : true}
+                key={i}
+                post={post}
+                actionLikeSave={this.actionLikeSave}
+                actionDblClick={this.actionDblClick}
+              />
             ))}
         </div>
       </>
@@ -65,13 +104,28 @@ const SinglePost = (props) => (
         src={props.post.images.standard_resolution.url}
         alt=''
         className='img-fluid'
+        onDoubleClick={() => props.actionDblClick(props.post, 'like', true)}
       />
+      <svg
+        onDoubleClick={() => props.actionDblClick(props.post, 'like', true)}
+        aria-label='Unlike'
+        className='_ab6- unlike effect-svg'
+        color='#ed4956'
+        fill='#ed4956'
+        height={24}
+        role='img'
+        viewBox='0 0 48 48'
+        width={24}
+      >
+        <path d='M34.6 3.1c-4.5 0-7.9 1.8-10.6 5.6-2.7-3.7-6.1-5.5-10.6-5.5C6 3.1 0 9.6 0 17.6c0 7.3 5.4 12 10.6 16.5.6.5 1.3 1.1 1.9 1.7l2.3 2c4.4 3.9 6.6 5.9 7.6 6.5.5.3 1.1.5 1.6.5s1.1-.2 1.6-.5c1-.6 2.8-2.2 7.8-6.8l2-1.8c.7-.6 1.3-1.2 2-1.7C42.7 29.6 48 25 48 17.6c0-8-6-14.5-13.4-14.5z' />
+      </svg>
     </div>
     <div className='footer'>
       <div className='actions'>
         <div className='left'>
           {props.post.user_has_liked ? (
             <svg
+              onClick={() => props.actionLikeSave(props.post, 'like', false)}
               aria-label='Unlike'
               className='_ab6- unlike'
               color='#ed4956'
@@ -85,6 +139,7 @@ const SinglePost = (props) => (
             </svg>
           ) : (
             <svg
+              onClick={() => props.actionLikeSave(props.post, 'like', true)}
               aria-label='Like'
               className=''
               color=''
@@ -147,6 +202,7 @@ const SinglePost = (props) => (
         <div className='right'>
           {props.post.user_has_saved ? (
             <svg
+              onClick={() => props.actionLikeSave(props.post, 'save', false)}
               aria-label='Remove'
               className='_ab6-'
               color='#262626'
@@ -160,6 +216,7 @@ const SinglePost = (props) => (
             </svg>
           ) : (
             <svg
+              onClick={() => props.actionLikeSave(props.post, 'save', true)}
               aria-label='Save'
               className='_ab6-'
               color=''

@@ -39,7 +39,7 @@ export const Stories = [
     },
     user_has_liked: true,
     user_has_saved: true,
-    id: '13433443443_2133432434',
+    id: '13433443443_2133435435434',
     user: {
       username: 'beingsalmankhan',
       profile_picture: 'https://via.placeholder.com/150/771796',
@@ -156,7 +156,7 @@ export const Stories = [
     },
     user_has_liked: false,
     user_has_saved: true,
-    id: '13433443443_2133432434',
+    id: '134334325443_2133432434',
     user: {
       username: 'hrithikroshan',
       profile_picture: 'https://via.placeholder.com/150/8aad88',
