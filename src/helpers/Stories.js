@@ -38,7 +38,7 @@ export const Stories = [
       id: '2343243243232',
     },
     user_has_liked: true,
-    user_has_saved: true,
+    user_has_saved: false,
     id: '13433443443_2133435435434',
     user: {
       username: 'beingsalmankhan',
@@ -66,6 +66,7 @@ export const Stories = [
         text: 'eita kon jaiga?',
       },
     ],
+    likedByMain: 'mahirakhan',
   },
   {
     attribution: null,
@@ -106,7 +107,7 @@ export const Stories = [
       id: '2343243243232',
     },
     user_has_liked: false,
-    user_has_saved: false,
+    user_has_saved: true,
     id: '13433443443_2133432434',
     user: {
       username: 'iamsrk',
@@ -115,6 +116,7 @@ export const Stories = [
       full_name: 'Shah Rukh Khan',
     },
     comments: [],
+    likedByMain: 'sajalaly',
   },
   {
     attribution: null,
@@ -155,7 +157,7 @@ export const Stories = [
       id: '2343243243232',
     },
     user_has_liked: false,
-    user_has_saved: true,
+    user_has_saved: false,
     id: '134334325443_2133432434',
     user: {
       username: 'hrithikroshan',
@@ -164,5 +166,6 @@ export const Stories = [
       full_name: 'Hrithik Roshan',
     },
     comments: [],
+    likedByMain: 'aliaabhatt',
   },
 ];

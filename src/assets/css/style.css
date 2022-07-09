@@ -217,6 +217,7 @@ nav .main-nav .right-section .icons img {
   background-color: #fff;
   border: 1px solid rgb(219, 219, 219);
   border-radius: 8px;
+  margin-bottom: 12px;
 }
 
 .homepage .main-sec .posts .single .header,
@@ -426,7 +427,8 @@ nav .main-nav .right-section .icons img {
   opacity: 0.5;
 }
 
-.homepage .main-sec .posts .single .input-comment .main-inp button:hover {
+.homepage .main-sec .posts .single .input-comment .main-inp button:hover,
+.homepage .main-sec .posts .single .input-comment .main-inp button.activee {
   opacity: 1;
 }
 
