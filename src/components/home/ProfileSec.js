@@ -1,15 +1,26 @@
 import React, { Component } from 'react';
 import ProfileImg from '../../assets/img/pp.jpeg';
+import SuggestionsJson from '../../helpers/profileSection.json';
 
 class ProfileSec extends Component {
   state = {
     year: '',
+    links: [
+      'About',
+      'Help',
+      'Press',
+      'API',
+      'Jobs',
+      'Privacy',
+      'Terms',
+      'Location',
+      'Language',
+    ],
   };
 
   componentDidMount() {
     const d = new Date();
     const year = d.getFullYear();
-    // console.log(year);
     this.setState({ year: year });
   }
 
@@ -36,64 +47,23 @@ class ProfileSec extends Component {
             <p className='fs-12 fw-600 pointer'>See All</p>
           </div>
           <div className='lists'>
-            <FollowListSingle
-              img_id='07g634'
-              name='md.nahid12'
-              follow='Followed by lonley_sagor + 6 more'
-            />
-            <FollowListSingle
-              img_id='98u765'
-              name='sar.jokar'
-              follow='Followed by md.nahid12 + 1 more'
-            />
-            <FollowListSingle
-              img_id='35g678'
-              name='islamicechotv'
-              follow='Popular'
-            />
-            <FollowListSingle
-              img_id='09j657'
-              name='me.alo1155'
-              follow='You like this Page on Facebook'
-            />
-            <FollowListSingle
-              img_id='67h890'
-              name='sk.nizamu'
-              follow='Followed by meinjam + 16 more'
-            />
+            {SuggestionsJson?.map((data, i) => (
+              <FollowListSingle
+                key={i}
+                bgColor={data?.color_code}
+                name={data?.username}
+                follow={data?.followed_by}
+              />
+            ))}
           </div>
         </div>
         <div className='company-info'>
           <ul>
-            <li>
-              <a href='?#'>About</a>
-            </li>
-            <li>
-              <a href='?#'>Help</a>
-            </li>
-            <li>
-              <a href='?#'>Press</a>
-            </li>
-            <li>
-              <a href='?#'>API</a>
-            </li>
-            <li>
-              <a href='?#'>Jobs</a>
-            </li>
-            <li>
-              <a href='?#'>Privacy</a>
-            </li>
-            <li>
-              <a href='?#'>Terms</a>
-            </li>
-            <li>
-              <a href='?#'>Location</a>
-            </li>
-            <li>
-              <a href='?#' className='last'>
-                Language
-              </a>
-            </li>
+            {this.state?.links?.map((name, i) => (
+              <li key={i}>
+                <a href='?#'>{name}</a>
+              </li>
+            ))}
           </ul>
           <p className='copy fs-12 m-0'>© {year} Instagram from Meta</p>
         </div>
@@ -104,14 +74,10 @@ class ProfileSec extends Component {
 
 export default ProfileSec;
 
-const FollowListSingle = ({ img_id, name, follow }) => (
+const FollowListSingle = ({ bgColor, name, follow }) => (
   <div className='single'>
     <div className='left pointer'>
-      <img
-        src={`https://via.placeholder.com/600/${img_id}`}
-        alt=''
-        className='img-fluid'
-      />
+      <div className='img' style={{ background: bgColor }}></div>
       <div className='name'>
         <p className='m-0 fs-14 fw-600'>{name}</p>
         <p className='m-0 fs-12 text-gray'>{follow}</p>

@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation } from 'swiper';
+import Stories from '../../helpers/Stories.json';
 
 // Import Swiper styles
 import 'swiper/css';
@@ -18,60 +19,11 @@ class StorySlider extends Component {
         modules={[Navigation]}
         slidesPerGroup={4}
       >
-        <SwiperSlide>
-          <SingleStory img_id='65c952' name='sk.ni..' />
-        </SwiperSlide>
-        <SwiperSlide>
-          <SingleStory img_id='56h786' name='sarjok..' />
-        </SwiperSlide>
-        <SwiperSlide>
-          <SingleStory img_id='07g634' name='_s_i_a..' />
-        </SwiperSlide>
-        <SwiperSlide>
-          <SingleStory img_id='65c952' name='sk.ni..' />
-        </SwiperSlide>
-        <SwiperSlide>
-          <SingleStory img_id='56h786' name='sarjok..' />
-        </SwiperSlide>
-        <SwiperSlide>
-          <SingleStory img_id='07g634' name='_s_i_a..' />
-        </SwiperSlide>
-        <SwiperSlide>
-          <SingleStory img_id='65c952' name='sk.ni..' />
-        </SwiperSlide>
-        <SwiperSlide>
-          <SingleStory img_id='56h786' name='sarjok..' />
-        </SwiperSlide>
-        <SwiperSlide>
-          <SingleStory img_id='07g634' name='_s_i_a..' />
-        </SwiperSlide>
-        <SwiperSlide>
-          <SingleStory img_id='65c952' name='sk.ni..' />
-        </SwiperSlide>
-        <SwiperSlide>
-          <SingleStory img_id='56h786' name='sarjok..' />
-        </SwiperSlide>
-        <SwiperSlide>
-          <SingleStory img_id='07g634' name='_s_i_a..' />
-        </SwiperSlide>
-        <SwiperSlide>
-          <SingleStory img_id='65c952' name='sk.ni..' />
-        </SwiperSlide>
-        <SwiperSlide>
-          <SingleStory img_id='56h786' name='sarjok..' />
-        </SwiperSlide>
-        <SwiperSlide>
-          <SingleStory img_id='07g634' name='_s_i_a..' />
-        </SwiperSlide>
-        <SwiperSlide>
-          <SingleStory img_id='65c952' name='sk.ni..' />
-        </SwiperSlide>
-        <SwiperSlide>
-          <SingleStory img_id='56h786' name='sarjok..' />
-        </SwiperSlide>
-        <SwiperSlide>
-          <SingleStory img_id='07g634' name='_s_i_a..' />
-        </SwiperSlide>
+        {Stories?.map((story, i) => (
+          <SwiperSlide key={i}>
+            <SingleStory bgColor={story?.bgColor} name={story?.name} />
+          </SwiperSlide>
+        ))}
       </Swiper>
     );
   }
@@ -79,9 +31,11 @@ class StorySlider extends Component {
 
 export default StorySlider;
 
-const SingleStory = ({ img_id, name }) => (
+const SingleStory = ({ bgColor, name }) => (
   <div className='single'>
-    <img src={'https://via.placeholder.com/600/' + img_id} alt='' />
+    <div className='img'>
+      <div className='child' style={{ background: bgColor }}></div>
+    </div>
     <p className='name'>{name}</p>
   </div>
 );

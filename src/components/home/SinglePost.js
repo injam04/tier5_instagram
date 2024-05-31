@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import UserImg from '../../assets/img/pp.jpeg';
+import { generateRandomColor } from '../../lib/function';
 
 class SinglePost extends Component {
   state = {
@@ -33,17 +34,17 @@ class SinglePost extends Component {
 
   render() {
     const { comment } = this.state;
+    const profilePic = this.props.post.user.profile_picture;
+    const postImgBg = this.props.post.images.standard_resolution.url;
 
     return (
       <div>
         <div className='single'>
           <div className='header'>
             <div className='user pointer'>
-              <img
-                src={this.props.post.user.profile_picture}
-                alt=''
-                className={this.props.story ? 'active' : ''}
-              />
+              <div className={`${this.props.story ? 'active' : ''} img`}>
+                <div className='child' style={{ background: profilePic }}></div>
+              </div>
               <p className='fw-600'>{this.props.post.user.username}</p>
             </div>
             <div className='action pointer'>
@@ -64,14 +65,18 @@ class SinglePost extends Component {
             </div>
           </div>
           <div className='main-image'>
-            <img
-              src={this.props.post.images.standard_resolution.url}
-              alt=''
-              className='img-fluid'
+            <div
               onDoubleClick={() =>
                 this.props.actionDblClick(this.props.post, 'like', true)
               }
-            />
+              className='img'
+              style={{ background: postImgBg }}
+            ></div>
+            {/* <img
+              src={this.props.post.images.standard_resolution.url}
+              alt=''
+              className='img-fluid'
+            /> */}
             <svg
               onDoubleClick={() =>
                 this.props.actionDblClick(this.props.post, 'like', true)
