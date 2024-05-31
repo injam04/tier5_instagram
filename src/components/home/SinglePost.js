@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import UserImg from '../../assets/img/pp.jpeg';
-import { generateRandomColor } from '../../lib/function';
 
 class SinglePost extends Component {
   state = {
